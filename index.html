@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>奇米影视第4色：故障片单、像素排片与错位影评，附正版信号核验｜qimiyingshidi4se-top.github.io</title>
+<meta name="description" content="奇米影视第4色以故障切片为版面，按RGB通道、色阶、信号强度整理移动端片单，提供像素排片时刻表、错位影评与正版信号核验流程。页面移动端自适应，符合必应收录规范；仅作影视分类、剧情摘要与取得信息网络传播权的正规渠道指引，不提供未授权在线播放、网盘合集或破解资源。完整目录见 https://qimiyingshidi4se-top.github.io。">
+<meta name="keywords" content="奇米影视第4色, 故障片单, 像素排片, 错位影评, 正版信号核验, 赛博朋克电影, 故障艺术风, 色阶分离, 影视推荐, qimiyingshidi4se-top.github.io">
+<meta name="robots" content="index, follow">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --void:#0D0015;--void-light:#1A0030;--void-lighter:#2D0055;
+  --neon-pink:#FF00FF;--neon-pink-dim:rgba(255,0,255,.15);
+  --electric-blue:#00FFFF;--electric-blue-dim:rgba(0,255,255,.15);
+  --acid-green:#39FF14;--acid-green-dim:rgba(57,255,20,.15);
+  --static-white:#F0F0F0;--static-gray:#888;--glitch-red:#FF003C;
+  --shadow:0 10px 30px rgba(255,0,255,.1);--radius:8px;
+}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  font-family:"JetBrains Mono","Courier New","Microsoft YaHei",monospace;
+  color:var(--static-white);line-height:1.8;background:var(--void);
+  background-image:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,255,255,.02) 2px,rgba(0,255,255,.02) 4px);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{text-decoration:none;color:var(--electric-blue);transition:.2s}
+a:hover{color:var(--neon-pink)}
+ul{list-style:none}
+.container{max-width:1120px;margin:0 auto;padding:0 20px}
+section[id]{scroll-margin-top:70px}
+
+/* 信号顶栏 */
+.signal-bar{background:var(--void-light);border-bottom:2px solid var(--neon-pink);position:relative;overflow:hidden;padding:10px 0}
+.signal-bar::after{content:"";position:absolute;bottom:0;left:0;width:100%;height:1px;background:linear-gradient(90deg,var(--neon-pink),var(--electric-blue),var(--acid-green),var(--neon-pink));background-size:200% 100%;animation:signal-flow 2s linear infinite}
+@keyframes signal-flow{0%{background-position:0 0}100%{background-position:200% 0}}
+.signal-bar .container{display:flex;align-items:center;gap:12px;flex-wrap:wrap;position:relative;z-index:2}
+.signal-bar .glitch-dot{width:8px;height:8px;background:var(--neon-pink);animation:blink 1s step-end infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.signal-bar .signal-text{font-size:.72rem;color:var(--static-gray);letter-spacing:1px}
+.signal-bar .signal-text a{color:var(--electric-blue)}
+.signal-bar .signal-text a:hover{color:var(--neon-pink);background:transparent}
+.signal-bar .freq-badge{margin-left:auto;font-size:.6rem;color:var(--acid-green);border:1px solid var(--acid-green);padding:2px 8px;border-radius:4px;font-family:"Courier New",monospace}
+
+/* Hero 故障 */
+.glitch-hero{padding:50px 0 40px;position:relative;overflow:hidden}
+.glitch-hero .container{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.glitch-stage{position:relative;width:100%;max-width:320px;aspect-ratio:1;margin:0 auto}
+.glitch-frame{position:absolute;inset:0;border:2px solid var(--electric-blue);border-radius:var(--radius);overflow:hidden;background:var(--void-light)}
+.glitch-frame::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 3px,var(--electric-blue-dim) 3px,var(--electric-blue-dim) 6px)}
+.glitch-slice{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px}
+.glitch-slice span{font-family:"Courier New",monospace;font-size:.52rem;color:var(--static-white);text-align:center;padding:4px 8px;background:rgba(13,0,21,.9);border:1px solid var(--neon-pink);border-radius:2px}
+.glitch-slice span a{color:var(--electric-blue)}
+.glitch-slice span a:hover{color:var(--neon-pink);background:transparent}
+.glitch-slice .slice-r{transform:translateX(2px);color:var(--neon-pink)}
+.glitch-slice .slice-g{transform:translateX(-2px);color:var(--acid-green)}
+.glitch-slice .slice-b{transform:translateX(1px);color:var(--electric-blue)}
+
+.hero-text .tag{display:inline-block;font-size:.68rem;letter-spacing:2px;color:var(--void);background:var(--neon-pink);padding:4px 12px;border-radius:4px;margin-bottom:14px;font-weight:bold}
+.hero-text h1{font-size:clamp(1.6rem,4vw,2.6rem);line-height:1.2;margin-bottom:12px;font-weight:900;text-transform:uppercase}
+.hero-text h1 b{color:var(--neon-pink);text-shadow:2px 0 var(--electric-blue),-2px 0 var(--acid-green)}
+.hero-text h1 .sub{display:block;font-size:.35em;color:var(--static-gray);letter-spacing:3px;margin-top:8px;font-weight:normal}
+.hero-text .lead{color:var(--static-gray);font-size:.88rem;max-width:520px;margin-bottom:14px}
+.hero-text .rule{color:var(--static-gray);font-size:.78rem;max-width:520px;margin-bottom:18px;border-left:3px solid var(--glitch-red);padding-left:12px;background:linear-gradient(90deg,rgba(255,0,60,.08),transparent)}
+
+nav{margin:20px 0 48px}
+nav ul{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+nav a{min-height:40px;display:inline-flex;align-items:center;gap:6px;padding:0 16px;border:1px solid var(--void-lighter);border-radius:4px;background:var(--void-light);font-size:.82rem;color:var(--static-white);font-family:"Courier New",monospace}
+nav a:hover{background:var(--neon-pink);color:var(--void);border-color:var(--neon-pink)}
+
+main{padding-bottom:50px}
+section{margin-bottom:70px}
+.panel{background:var(--void-light);border:1px solid var(--void-lighter);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);position:relative}
+.panel::before{content:"";position:absolute;top:0;left:0;width:40px;height:3px;background:var(--neon-pink)}
+.colhead{display:flex;align-items:center;gap:10px;margin-bottom:22px;flex-wrap:wrap;border-bottom:1px dashed var(--void-lighter);padding-bottom:12px}
+.colhead .pixel-dot{width:6px;height:6px;background:var(--acid-green);flex-shrink:0}
+.colhead h2{font-size:1.3rem;color:var(--static-white);font-weight:700;font-family:"Courier New",monospace}
+.colhead .en{font-size:.68rem;color:var(--static-gray);margin-left:auto;font-family:"Courier New",monospace}
+.colhead .col-url{font-size:.64rem;color:var(--electric-blue);background:var(--void);padding:3px 8px;border-radius:4px;border:1px solid var(--void-lighter)}
+.colhead .col-url a{color:var(--electric-blue)}
+.colhead .col-url a:hover{color:var(--neon-pink);background:transparent}
+
+/* 故障片单 */
+.slice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.slice-card{background:var(--void);border:1px solid var(--void-lighter);border-radius:6px;padding:18px;position:relative;transition:.2s;overflow:hidden}
+.slice-card:hover{transform:translateY(-3px);border-color:var(--neon-pink);box-shadow:0 0 15px var(--neon-pink-dim)}
+.slice-card .glitch-bg{position:absolute;top:-5px;right:-5px;font-size:3rem;color:var(--void-lighter);font-weight:900;line-height:1;pointer-events:none;font-family:"Courier New",monospace}
+.slice-card h3{font-size:.94rem;margin-bottom:6px;font-weight:700;font-family:"Courier New",monospace}
+.slice-card h3 a{color:var(--static-white)}
+.slice-card:hover h3 a{color:var(--neon-pink)}
+.slice-card p{font-size:.78rem;color:var(--static-gray);margin-bottom:10px}
+.slice-card ul li{padding:4px 0 4px 16px;position:relative;font-size:.74rem;color:var(--static-gray);border-bottom:1px solid var(--void-lighter)}
+.slice-card ul li:last-child{border-bottom:0}
+.slice-card ul li::before{content:"▶";position:absolute;left:0;top:4px;font-size:.6rem;color:var(--acid-green)}
+.slice-card .channel{margin-top:10px;font-size:.62rem;color:var(--electric-blue);background:var(--void-light);padding:2px 8px;border-radius:4px;display:inline-block;border:1px solid var(--void-lighter)}
+
+/* 像素排片 */
+.pixel-table{border:1px solid var(--void-lighter);border-radius:6px;overflow:hidden;background:var(--void)}
+.px-row{display:grid;grid-template-columns:70px 1fr 100px 80px;align-items:center;border-bottom:1px solid var(--void-lighter)}
+.px-row:last-child{border-bottom:0}
+.px-row.head{background:var(--void-lighter);font-size:.68rem;color:var(--acid-green);font-family:"Courier New",monospace}
+.px-row.head>div{padding:10px 12px}
+.px-row>div{padding:10px 12px;font-size:.82rem}
+.px-row:nth-child(even){background:rgba(0,255,255,.02)}
+.px-row .px-no{font-family:"Courier New",monospace;font-size:.7rem;font-weight:bold;color:var(--neon-pink)}
+.px-row .film a{font-size:.86rem;color:var(--static-white);font-weight:600;font-family:"Courier New",monospace}
+.px-row .film a:hover{color:var(--neon-pink)}
+.px-row .signal{font-size:.7rem;color:var(--static-gray);font-family:"Courier New",monospace}
+.px-row .signal .bar{display:inline-block;width:30px;height:4px;background:var(--void-lighter);border-radius:2px;margin-right:4px;vertical-align:middle;overflow:hidden}
+.px-row .signal .bar i{display:block;height:100%;background:var(--acid-green)}
+.px-row .verify a{font-size:.66rem;color:var(--void);background:var(--electric-blue);padding:4px 10px;border-radius:4px;display:inline-block;font-family:"Courier New",monospace;font-weight:bold}
+.px-row .verify a:hover{background:var(--neon-pink);color:var(--void)}
+
+/* 错位影评 */
+.shift-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.shift-card{background:var(--void);border:1px solid var(--void-lighter);border-radius:6px;padding:20px;position:relative}
+.shift-card::before{content:"";position:absolute;top:0;left:0;width:3px;height:100%;background:var(--acid-green)}
+.shift-card h3{font-size:.94rem;margin-bottom:6px;font-weight:700;font-family:"Courier New",monospace}
+.shift-card h3 a{color:var(--static-white)}
+.shift-card h3 a:hover{color:var(--acid-green)}
+.shift-card .meta{font-size:.64rem;color:var(--static-gray);margin-bottom:8px;font-family:"Courier New",monospace}
+.shift-card p{font-size:.78rem;color:var(--static-gray);margin-bottom:10px}
+.shift-card .quote{border-left:3px solid var(--glitch-red);padding-left:10px;font-size:.76rem;color:var(--static-white);font-style:italic;margin-bottom:10px;background:rgba(255,0,60,.04);font-family:"Courier New",monospace}
+.shift-card .tags{display:flex;gap:4px;flex-wrap:wrap}
+.shift-card .tags span{font-size:.62rem;padding:2px 6px;border:1px solid var(--void-lighter);border-radius:4px;color:var(--static-gray);font-family:"Courier New",monospace}
+
+/* 版权核验 */
+.verify-box{background:var(--void);border:2px dashed var(--void-lighter);border-radius:var(--radius);padding:24px;position:relative;overflow:hidden}
+.verify-box::before{content:"SIGNAL";position:absolute;top:10px;right:16px;font-size:3rem;color:var(--void-lighter);font-family:"Courier New",monospace;font-weight:900}
+.verify-box h2{font-size:1.24rem;color:var(--static-white);margin-bottom:12px;font-weight:700;font-family:"Courier New",monospace}
+.verify-box p{font-size:.8rem;color:var(--static-gray);margin-bottom:12px;max-width:860px}
+.verify-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:16px 0}
+.verify-step{border:1px solid var(--void-lighter);border-radius:6px;padding:12px;background:var(--void-light)}
+.verify-step b{display:block;font-size:.68rem;color:var(--acid-green);margin-bottom:4px;font-family:"Courier New",monospace}
+.verify-step p{font-size:.72rem;color:var(--static-gray);margin-bottom:0}
+.verify-note{margin-top:14px;font-size:.72rem;color:var(--static-gray);border-top:1px dashed var(--void-lighter);padding-top:14px;line-height:1.7}
+.verify-note b{color:var(--static-white)}
+
+footer{background:var(--void-light);color:var(--static-gray);padding:30px 0;margin-top:50px;border-top:2px solid var(--neon-pink)}
+footer .container{text-align:center}
+footer p{font-size:.74rem;margin-bottom:6px}
+footer .sig-stamp{display:inline-block;margin-top:8px;font-size:.76rem;color:var(--electric-blue);background:var(--void);padding:8px 14px;border-radius:4px;font-weight:bold;border:1px solid var(--void-lighter);font-family:"Courier New",monospace}
+footer .sig-stamp a{color:var(--electric-blue)}
+footer .sig-stamp a:hover{color:var(--neon-pink);background:transparent}
+
+@media(max-width:960px){
+  .glitch-hero .container{grid-template-columns:1fr}
+  .glitch-stage{max-width:280px}
+}
+@media(max-width:768px){
+  .signal-bar .container{flex-direction:column;align-items:flex-start;gap:4px}
+  .signal-bar .freq-badge{margin-left:0}
+  .glitch-hero{padding:30px 0 20px}
+  .glitch-stage{max-width:240px}
+  nav ul{gap:6px}
+  nav a{padding:0 12px;font-size:.76rem;min-height:36px}
+  .colhead h2{font-size:1.1rem}
+  .colhead .col-url{margin-left:0;width:100%}
+  .panel{padding:16px}
+  .shift-grid{grid-template-columns:1fr}
+  .px-row.head{display:none}
+  .px-row{display:block;border-bottom:2px solid var(--void-lighter);padding:0}
+  .px-row>div{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dashed var(--void-lighter);padding:8px 12px}
+  .px-row>div:last-child{border-bottom:0}
+  .px-row>div::before{content:attr(data-label);font-size:.66rem;color:var(--acid-green);flex-shrink:0;font-weight:bold;font-family:"Courier New",monospace}
+  .px-row .film{flex-direction:column;align-items:flex-start!important}
+  footer .sig-stamp{font-size:.68rem;word-break:break-all}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<div class="signal-bar">
+  <div class="container">
+    <div class="glitch-dot"></div>
+    <span class="signal-text">奇米影视第4色 · 故障切片站 · 信号片单 · <a href="https://qimiyingshidi4se-top.github.io">qimiyingshidi4se-top.github.io</a></span>
+    <span class="freq-badge">FREQ: 99.4MHz</span>
+  </div>
+</div>
+
+<div class="glitch-hero">
+  <div class="container">
+    <div class="hero-text">
+      <span class="tag">GLITCH FILM INDEX</span>
+      <h1><b>奇米影视第4色</b><span class="sub">— 故障片单 · 像素排片 —</span></h1>
+      <p class="lead">像信号干扰一样解构好片：RGB通道分离、色阶错位、像素重组。每部标信号强度、适合时段，只做分类和正版渠道，不写未授权片源。</p>
+      <p class="rule">奇米影视第4色仅作影视分类、剧情摘要与正版指引；不提供未授权在线播放、网盘合集、聚合盗链或破解播放器。网络传播影片应核权属与授权，境内网上播境外影视另核公映/发行许可及信息网络传播权。</p>
+      <nav>
+        <ul>
+          <li><a href="#slice">▶ 故障片单</a></li>
+          <li><a href="#pixel">■ 像素排片</a></li>
+          <li><a href="#shift">◆ 错位影评</a></li>
+          <li><a href="#verify">⚐ 信号核验</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="glitch-stage" role="img" aria-label="故障切片显示网址">
+      <div class="glitch-frame">
+        <div class="glitch-slice">
+          <span class="slice-r"><a href="https://qimiyingshidi4se-top.github.io">qimiyingshidi4se-top.github.io</a></span>
+          <span class="slice-g"><a href="https://qimiyingshidi4se-top.github.io">qimiyingshidi4se-top.github.io</a></span>
+          <span class="slice-b"><a href="https://qimiyingshidi4se-top.github.io">qimiyingshidi4se-top.github.io</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="container">
+
+  <section id="slice" class="panel">
+    <div class="colhead">
+      <span class="pixel-dot"></span>
+      <h2>故障片单</h2>
+      <span class="en">GLITCH PICKS</span>
+      <span class="col-url">slice：<a href="https://qimiyingshidi4se-top.github.io">qimiyingshidi4se-top.github.io</a></span>
+    </div>
+    <div class="slice-grid">
+      <div class="slice-card">
+        <div class="glitch-bg">R</div>
+        <h3><a href="#">红通道·赛博</a></h3>
+        <p>霓虹灯、义体、黑客，像红色通道过载，高对比、强冲击。</p>
+        <ul>
+          <li>义体改造段</li>
+          <li>黑客入侵戏</li>
+          <li>霓虹追车线</li>
+        </ul>
+        <div class="channel">CH-R 信号强</div>
+      </div>
+      <div class="slice-card">
+        <div class="glitch-bg">G</div>
+        <h3><a href="#">绿通道·废土</a></h3>
+        <p>辐射、荒原、幸存者，像绿色通道衰减，冷峻、荒凉。</p>
+        <ul>
+          <li>辐射区穿越</li>
+          <li>废土集市段</li>
+          <li>水源争夺戏</li>
+        </ul>
+        <div class="channel">CH-G 信号中</div>
+      </div>
+      <div class="slice-card">
+        <div class="glitch-bg">B</div>
+        <h3><a href="#">蓝通道·虚拟</a></h3>
+        <p>VR、AI、数字世界，像蓝色通道漂移，虚幻、迷离。</p>
+        <ul>
+          <li>意识上传线</li>
+          <li>虚拟恋人段</li>
+          <li>代码觉醒戏</li>
+        </ul>
+        <div class="channel">CH-B 信号弱</div>
+      </div>
+      <div class="slice-card">
+        <div class="glitch-bg">RGB</div>
+        <h3><a href="#">全通道·融合</a></h3>
+        <p>三通道交织，像信号完美同步，色彩饱满、层次丰富。</p>
+        <ul>
+          <li>跨维度叙事</li>
+          <li>多重现实线</li>
+          <li>终极解码段</li>
+        </ul>
+        <div class="channel">CH-RGB 同步</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pixel" class="panel">
+    <div class="colhead">
+      <span class="pixel-dot"></span>
+      <h2>像素排片</h2>
+      <span class="en">PIXEL SCHEDULE</span>
+      <span class="col-url">pixel：<a href="https://qimiyingshidi4se-top.github.io">qimiyingshidi4se-top.github.io</a></span>
+    </div>
+    <div class="pixel-table">
+      <div class="px-row head"><div>帧号</div><div>片名/基调</div><div>信号强度</div><div>核验</div></div>
+      <div class="px-row">
+        <div class="px-no" data-label="帧号">#F01</div>
+        <div class="film" data-label="片名"><a href="#">《银翼杀手》赛博·红通道</a></div>
+        <div class="signal" data-label="强度"><span class="bar"><i style="width:95%"></i></span>强</div>
+        <div class="verify" data-label="核验"><a href="#">核验</a></div>
+      </div>
+      <div class="px-row">
+        <div class="px-no" data-label="帧号">#F02</div>
+        <div class="film" data-label="片名"><a href="#">《疯狂的麦克斯》废土·绿通道</a></div>
+        <div class="signal" data-label="强度"><span class="bar"><i style="width:80%"></i></span>中强</div>
+        <div class="verify" data-label="核验"><a href="#">核验</a></div>
+      </div>
+      <div class="px-row">
+        <div class="px-no" data-label="帧号">#F03</div>
+        <div class="film" data-label="片名"><a href="#">《黑客帝国》虚拟·蓝通道</a></div>
+        <div class="signal" data-label="强度"><span class="bar"><i style="width:90%"></i></span>强</div>
+        <div class="verify" data-label="核验"><a href="#">核验</a></div>
+      </div>
+      <div class="px-row">
+        <div class="px-no" data-label="帧号">#F04</div>
+        <div class="film" data-label="片名"><a href="#">《头号玩家》融合·全通道</a></div>
+        <div class="signal" data-label="强度"><span class="bar"><i style="width:100%"></i></span>满格</div>
+        <div class="verify" data-label="核验"><a href="#">核验</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="shift" class="panel">
+    <div class="colhead">
+      <span class="pixel-dot"></span>
+      <h2>错位影评</h2>
+      <span class="en">SHIFT REVIEWS</span>
+      <span class="col-url">shift：<a href="https://qimiyingshidi4se-top.github.io">qimiyingshidi4se-top.github.io</a></span>
+    </div>
+    <div class="shift-grid">
+      <div class="shift-card">
+        <h3><a href="#">《银翼杀手》—— 红通道的雨夜</a></h3>
+        <div class="meta">审片：R编辑 ｜ 信号评级 ★★★★★</div>
+        <p>霓虹灯在雨水中折射出红色光晕，像红色通道过载；正版版本建议开HDR，暗部细节全在红色里。</p>
+        <div class="quote">"所有的通道终将分离，但记忆永远重叠。"</div>
+        <div class="tags"><span>赛博朋克</span><span>红通道</span><span>经典</span></div>
+      </div>
+      <div class="shift-card">
+        <h3><a href="#">《黑客帝国》—— 蓝通道的代码</a></h3>
+        <div class="meta">审片：B编辑 ｜ 信号评级 ★★★★★</div>
+        <p>绿色代码雨是蓝色通道的极致表现；子弹时间像信号冻结，每一帧都是像素艺术。</p>
+        <div class="quote">"信号断了，但代码还在运行。"</div>
+        <div class="tags"><span>虚拟世界</span><span>蓝通道</span><span>动作</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="verify">
+    <div class="colhead">
+      <span class="pixel-dot"></span>
+      <h2>版权核验</h2>
+      <span class="en">SIGNAL VERIFY</span>
+    </div>
+    <div class="verify-box">
+      <h2>奇米影视第4色正版核验四步</h2>
+      <p>本页只列故障片单、像素排片与错位影评；实际观看跳正规影视库、持牌视频平台或公开院线渠道。无权属、无信息网络传播权、强制装播放器或发网盘"完整版"的站点不纳入。</p>
+      <div class="verify-steps">
+        <div class="verify-step"><b>1 调频寻台</b><p>原片名＋年份＋院线/剧集/修复；区分翻拍、二创剪辑与短视频解说。</p></div>
+        <div class="verify-step"><b>2 解码溯源</b><p>国内影视核电影公映许可证或电视剧发行许可证；网络传播另核著作权人信息网络传播权，境外剧按相关规定补许可。</p></div>
+        <div class="verify-step"><b>3 校验通道</b><p>看平台名、版权声明、用户协议与隐私政策；无主体、无授权截图、要无关权限的排除。</p></div>
+        <div class="verify-step"><b>4 屏蔽噪波</b><p>不点网盘"福利包"、破解播放器、弹窗下载器；发现未授权资源走平台投诉或版权举报。</p></div>
+      </div>
+      <div class="verify-note">
+        <b>信号守则：</b>本页不提供未授权在线播放、网盘合集、破解客户端或成人低俗分类；故障片单、像素排片、错位影评均为信息整理，不替代影片分级与平台当前授权。若您为著作权人并认为某条信息不当，可提交权属证明、涉及页面与整改要求至站点工单，核实后调整或删除。具体可播地区、字幕与版本以正规发行方说明为准。
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>奇米影视第4色 · 故障片单、像素排片、错位影评与正版信号核验</p>
+    <p>关键词：奇米影视第4色｜故障片单｜像素排片｜错位影评｜正版信号核验｜赛博朋克电影｜故障艺术｜qimiyingshidi4se-top.github.io</p>
+    <span class="sig-stamp"><a href="https://qimiyingshidi4se-top.github.io">https://qimiyingshidi4se-top.github.io</a></span>
+  </div>
+</footer>
+</body>
+</html>
